@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 file(GLOB_RECURSE include ${CMAKE_CURRENT_SOURCE_DIR}/include/*.hpp)
-file(GLOB_RECURSE source ${CMAKE_CURRENT_SOURCE_DIR}/source/*.cxx)
+file(GLOB_RECURSE sources ${CMAKE_CURRENT_SOURCE_DIR}/source/*.cxx)
 
 add_library(${PROJECT_NAME} 
 	STATIC
@@ -19,4 +19,4 @@ add_library(${PROJECT_NAME}
 
 target_include_directories(${PROJECT_NAME} PRIVATE 
 	${CMAKE_CURRENT_SOURCE_DIR}/include/
-	)
+)
