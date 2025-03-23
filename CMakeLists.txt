@@ -1,9 +1,8 @@
 cmake_minimum_required(VERSION 3.20)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
-set(PROJECT_NAME "Serene")
-
-project(${PROJECT_NAME} LANGUAGES CXX)
+project("Serene" LANGUAGES CXX)
+enable_testing()
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -20,3 +19,7 @@ add_library(${PROJECT_NAME}
 target_include_directories(${PROJECT_NAME} PRIVATE 
 	${CMAKE_CURRENT_SOURCE_DIR}/include/
 )
+
+target_compile_definitions(${PROJECT_NAME} PRIVATE $<$<CONFIG:Debug>:DEBUG>)
+
+add_subdirectory(tests)

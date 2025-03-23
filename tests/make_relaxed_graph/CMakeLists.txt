@@ -1,0 +1,3 @@
+add_executable(make_relaxed_graph main.cxx)
+target_link_libraries(make_relaxed_graph PRIVATE Serene)
+add_test(NAME make_relaxed_graph COMMAND make_relaxed_graph)
